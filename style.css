@@ -40,7 +40,7 @@
 
 }
 
-#input-container {
+#input_container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -61,12 +61,13 @@ input {
     font-size: 1.3em;
 }
 
-#lives-text {
+#lives {
     color: white;
-
+    text-align: center;
+    font-size: 2em;
 }
 
-#message {
+#m {
     font-size: 1.5em;
     background-color: #fecb00;
     padding: 5px 15px;

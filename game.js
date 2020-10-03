@@ -1,25 +1,29 @@
 const $submitButton = document.getElementById("submit");
-const $message1 = document.getElementById("message");
+const $message1 = document.getElementById("m");
 const $lives = document.getElementById("lives");
+const $l = document.getElementById("lives_text")
 
-var guessnum = Math.round(Math.random() * 100);
+var guessnum = Math.round(Math.random() * 100) + 1;
 var lives = 10;
+var l;
 var msg;
-
 $submitButton.onclick = () => {
-
-    let userInput = document.getElementById("number-input").Value;
+    var x = document.getElementById("myNumber").value;
+    console.log(x);
+    l = "Remaining Lives:";
     lives--;
-    if (userInput == guessnum) {
+    if (x == guessnum) {
         location.href = './win.html';
     } else if (lives == 0) {
         location.href = "./lose.html";
-    } else if (userInput > guessnum) {
-        msg = "Oops! you guess is too high";
-    } else if (userInput < guessnum) {
-        msg = "Oops! you guess is too low";
+    } else if (x > guessnum) {
+        msg = "clue:Oops! you guess is too high";
+    } else if (x < guessnum) {
+        msg = "clue:Oops! you guess is too low";
     }
-    $message1.style.display = "inherit";
-    $message1.innerHTML = message;
+    $l.style.dispaly = "inherit";
+    $l.innerHTML = l;
     $lives.innerHTML = lives;
+    $message1.style.display = "inherit";
+    $message1.innerHTML = msg;
 }
